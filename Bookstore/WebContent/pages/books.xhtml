@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Strona główna</title>
+	<meta name="author" content="The Author"></meta>
+</h:head>
+<!-- Add 50px padding top to the body for the navbar -->
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+	<ui:composition template="/WEB-INF/templates/main-template.xhtml">
+
+		<ui:define name="content">
+			<b:container>
+                <h1>Aktualnie przeczytane książki</h1>
+            </b:container>
+			<b:container>
+				<ui:repeat value="#{bookBean.bookList}" var="book">
+					<b:column col-md="4">
+						<b:jumbotron style="padding: 0px;">
+							<h2>#{book.nazwa} - ocena #{book.ocena}</h2>
+							<p>#{book.recenzja }</p>
+							<p>Skończyłem czytać #{book.dataPrzeczytania}.</p>
+						</b:jumbotron>
+
+					</b:column>
+				</ui:repeat>
+
+			</b:container>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

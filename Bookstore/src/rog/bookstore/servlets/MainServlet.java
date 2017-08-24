@@ -27,9 +27,7 @@ public class MainServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("jestem w servlecie");
-		request.setAttribute("test", "Moja ukryta wiadomosc");
-		request.getRequestDispatcher("/pages/index.xhtml").forward(request, response);
+		request.getRequestDispatcher("/pages/hello.xhtml").forward(request, response);
 	}
 
 	/**
