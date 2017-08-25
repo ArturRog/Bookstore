@@ -2,23 +2,35 @@ package rog.bookstore.book;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bookstore.book")
 public class Book {
 
 	private String nazwa;
 	private String recenzja;
 	private Integer ocena;
 	private Date dataPrzeczytania;
+	private Boolean przeczytana; 
 	
 	
 	
 	
-	
-	public Book(String nazwa, String recenzja, Integer ocena, Date dataPrzeczytania) {
+	public Boolean getPrzeczytana() {
+		return przeczytana;
+	}
+	public void setPrzeczytana(Boolean przeczytana) {
+		this.przeczytana = przeczytana;
+	}
+	public Book(String nazwa, String recenzja, Integer ocena, Date dataPrzeczytania, Boolean przeczytana) {
 		super();
 		this.nazwa = nazwa;
 		this.recenzja = recenzja;
 		this.ocena = ocena;
 		this.dataPrzeczytania = dataPrzeczytania;
+		this.przeczytana = przeczytana;
 	}
 	public String getNazwa() {
 		return nazwa;
